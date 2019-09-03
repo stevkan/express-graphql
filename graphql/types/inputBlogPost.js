@@ -5,7 +5,7 @@ import {
 } from 'graphql';
 
 export default new GraphQLInputObjectType({
-  name: 'BlogPostInput',
+  name: 'InputBlogPost',
   fields: {
     _id: { type: GraphQLID },
     title: { type: GraphQLString },

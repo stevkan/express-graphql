@@ -17,16 +17,16 @@ export default {
   },
   async resolve(root, args, context, info) {
     const projection = getProjection(info.fieldNodes[0]);
-    const removedBlogPost = await BlogPostModel
-      .findByIdAndRemove(args._id, {
+    const deletedBlogPost = await BlogPostModel
+      .findByIdAndDelete(args._id, {
         select: projection
       })
       .exec();
 
-    if (!removedBlogPost) {
+    if (!deletedBlogPost) {
       throw new Error('Error removing blog post');
     }
 
-    return removedBlogPost;
+    return deletedBlogPost;
   }
 };

@@ -1,9 +1,9 @@
 import addComment from './addComment';
-import removeAllComments from './deleteAllComments';
-import removeComment from './deleteComment';
+import deleteComment from './deleteComment';
+import deleteAllComments from './deleteAllComments';
 
 export default {
   addComment,
-  removeComment,
-  removeAllComments
+  deleteComment,
+  deleteAllComments
 };

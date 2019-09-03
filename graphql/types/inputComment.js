@@ -6,7 +6,7 @@ import {
 } from 'graphql';
 
 export default new GraphQLInputObjectType({
-  name: 'CommentInput',
+  name: 'InputComment',
   fields: {
     _id: {
       type: new GraphQLNonNull(GraphQLID)

@@ -1,7 +1,9 @@
 import {
-  GraphQLBoolean
+  GraphQLBoolean,
+  GraphQLList
 } from 'graphql';
 
+import blogPostType from '../../types/comment';
 import CommentModel from '../../../models/comment';
 
 export default {
@@ -9,6 +11,8 @@ export default {
   resolve(root, args, context, info) {
     return CommentModel
       .deleteMany()
-      .exec();
+      .exec(response => {
+        return response
+      });
   }
 };

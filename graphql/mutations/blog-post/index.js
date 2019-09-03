@@ -1,9 +1,9 @@
-import addBlogPost from './addPost';
-import removeAllBlogPosts from './deleteAllPosts';
-import removeBlogPost from './deletePost';
+import addPost from './addPost';
+import deletePost from './deletePost';
+import deleteAllPosts from './deleteAllPosts';
 
 export default {
-  addBlogPost,
-  removeBlogPost,
-  removeAllBlogPosts
+  addPost,
+  deletePost,
+  deleteAllPosts
 };
