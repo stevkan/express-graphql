@@ -17,7 +17,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": \"mutation ($data: BlogPostInput!) { addBlogPost(data: $data) }\",\n    \"variables\": {\n        \"data\": {\n            \"_id\": \"569e72a7ebd14d53eccef867\",\n            \"title\": \"First post\",\n            \"description\": \"My first post on my blog\"\n        }\n    }\n}"
+					"raw": "{\n    \"query\": \"mutation ($data: InputBlogPost!) { addPost(data: $data) }\",\n    \"variables\": {\n        \"data\": {\n            \"_id\": \"569e72a7ebd14d53eccef867\",\n            \"title\": \"First post\",\n            \"description\": \"My first post on my blog\"\n        }\n    }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:4000/graphql",
@@ -45,7 +45,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": \"mutation ($data: BlogPostInput!) { addBlogPost(data: $data) }\",\n    \"variables\": {\n        \"data\": {\n            \"_id\": \"569e737bebd14d53eccef868\",\n            \"title\": \"Second post\",\n            \"description\": \"My second post on my blog\"\n        }\n    }\n}"
+					"raw": "{\n    \"query\": \"mutation ($data: InputBlogPost!) { addPost(data: $data) }\",\n    \"variables\": {\n        \"data\": {\n            \"_id\": \"569e737bebd14d53eccef868\",\n            \"title\": \"Second post\",\n            \"description\": \"My second post on my blog\"\n        }\n    }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:4000/graphql",
@@ -157,7 +157,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": \"mutation ($data: BlogPostInput!, $commentData: CommentInput!) { addBlogPost(data: $data) addComment(data: $commentData) }\",\n    \"variables\": {\n        \"data\": {\n            \"_id\": \"569e75fdebd14d53eccef869\",\n            \"title\": \"Third post\",\n            \"description\": \"My third post on my blog\"\n        },\n        \"commentData\": {\n            \"_id\": \"569e7603ebd14d53eccef86a\",\n            \"postId\": \"569e737bebd14d53eccef868\",\n            \"text\": \"Comment on the second blog post\"\n        }\n    }\n}"
+					"raw": "{\n    \"query\": \"mutation ($data: InputBlogPost!, $commentData: InputComment!) { addPost(data: $data) addComment(data: $commentData) }\",\n    \"variables\": {\n        \"data\": {\n            \"_id\": \"569e75fdebd14d53eccef869\",\n            \"title\": \"Third post\",\n            \"description\": \"My third post on my blog\"\n        },\n        \"commentData\": {\n            \"_id\": \"569e7603ebd14d53eccef86a\",\n            \"postId\": \"569e737bebd14d53eccef868\",\n            \"text\": \"Comment on the second blog post\"\n        }\n    }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:4000/graphql",
@@ -213,7 +213,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": \"mutation { removeAllBlogPosts removeAllComments }\"\n}"
+					"raw": "{\n    \"query\": \"mutation { deleteAllPosts deleteAllComments }\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:4000/graphql",
