@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import graphqlHTTP from 'express-graphql';
 import mongoose from 'mongoose'
 
@@ -6,8 +7,19 @@ import schema from './graphql';
 
 var app = express();
 
+const whitelist = ['http://localhost:3000']
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
 // GraphqQL server route
-app.use('/graphql', graphqlHTTP(req => ({
+app.use('/graphql', cors(corsOptions), graphqlHTTP(req => ({
   schema,
   pretty: true,
   graphiql: true
